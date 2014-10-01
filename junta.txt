@@ -1,0 +1,141 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    17:09:06 09/20/2014 
+-- Design Name: 
+-- Module Name:    Projeto_Final - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity Projeto_Final is
+    Port ( CLK : in  STD_LOGIC;
+			  OUT_ALU_FIM, OUT_ACC_FIM, OUT_PC_FIM, OUT_REM_FIM, OUT_RDM_FIM : out STD_LOGIC_VECTOR (7 downto 0);
+			  OUT_N_FIM, OUT_Z_FIM : out STD_LOGIC;
+           RST : in  STD_LOGIC);
+end Projeto_Final;
+
+architecture Behavioral of Projeto_Final is
+
+COMPONENT Memoria
+  PORT (
+    clka : IN STD_LOGIC;
+    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+  );
+
+END COMPONENT;
+
+COMPONENT Datapath
+  PORT ( 
+			  -- Sinais externos
+			  CLK : in  STD_LOGIC;
+           RST : in  STD_LOGIC;
+			  
+			  --Sinais de controle (vindos da UC)
+           carga_ACC : in  STD_LOGIC;
+           sel_ULA : in  STD_LOGIC_VECTOR (2 downto 0);
+           carga_NZ : in  STD_LOGIC;
+           carga_RI : in  STD_LOGIC;
+           carga_PC : in  STD_LOGIC;
+           carga_RDM : in  STD_LOGIC;
+           carga_REM : in  STD_LOGIC;
+           inc_PC : in  STD_LOGIC;
+           sel_MUX_RDM : in  STD_LOGIC;
+			  sel_MUX_REM : in STD_LOGIC;
+			  
+			  -- Sinais de outros blocos do projeto (fora do Datapath)
+			  in_MUX_RDM : in STD_LOGIC_VECTOR (7 downto 0);
+           out_RDM : out  STD_LOGIC_VECTOR (7 downto 0);
+           out_REM : out  STD_LOGIC_VECTOR (7 downto 0);
+           out_DECOD : out  STD_LOGIC_VECTOR (10 downto 0);
+           out_N : out  STD_LOGIC;
+           out_Z : out  STD_LOGIC;
+			  
+			  -- PARA EFEITOS DE SIMULAÇÃO
+			  OUT_ALU : out STD_LOGIC_VECTOR (7 downto 0);
+			  OUT_PC_SIM : out STD_LOGIC_VECTOR (7 downto 0);
+			  OUT_ACC_SIM : out STD_LOGIC_VECTOR (7 downto 0));
+			  
+END COMPONENT;
+
+COMPONENT FSM_UC
+	PORT (  in_INSTR : in  STD_LOGIC_VECTOR (10 downto 0);
+           in_N : in  STD_LOGIC;
+           in_Z : in  STD_LOGIC;
+			  CLK : in STD_LOGIC;
+			  RST : in STD_LOGIC;
+           carga_PC : out  STD_LOGIC;
+			  inc_PC : out STD_LOGIC;
+           carga_ACC : out  STD_LOGIC;
+			  carga_NZ : out STD_LOGIC;
+           carga_RI : out  STD_LOGIC;
+           carga_REM : out  STD_LOGIC;
+           carga_RDM : out  STD_LOGIC;
+           sel_MUX_REM : out  STD_LOGIC; -- 0 = vem do PC; 1 = vem do RDM
+			  sel_MUX_RDM : out STD_LOGIC; -- 0 = vem do ACC; 1 = vem da memória
+			  
+           sel_ULA : out  STD_LOGIC_VECTOR (2 downto 0);
+			  -- 000 = ADD; 001 = AND; 010 = OR; 011 = NOT; 100 = LOAD;
+			  
+           read_write : out STD_LOGIC_VECTOR (0 downto 0));
+			  -- 0 = READ; 1 = WRITE;
+
+END COMPONENT;
+
+signal RDM_to_MEM, REM_to_MEM, MEM_to_MUX_RDM : STD_LOGIC_VECTOR (7 downto 0);
+
+signal DECOD_to_UC : STD_LOGIC_VECTOR (10 downto 0);
+
+signal r_w : STD_LOGIC_VECTOR (0 downto 0);
+
+signal N_to_UC, Z_to_UC, UC_to_carga_PC, UC_to_inc_PC, UC_to_carga_ACC, UC_to_carga_NZ, 
+UC_to_carga_RI, UC_to_carga_REM, UC_to_carga_RDM, UC_to_sel_MUX_REM, UC_to_sel_MUX_RDM : STD_LOGIC;
+
+signal UC_to_ULA : STD_LOGIC_VECTOR (2 downto 0);
+
+begin
+
+MEM : Memoria
+  PORT MAP (CLK, r_w, REM_to_MEM, RDM_to_MEM, MEM_to_MUX_RDM);
+
+FSM : FSM_UC
+	PORT MAP (DECOD_to_UC, N_to_UC, Z_to_UC, CLK, RST, UC_to_carga_PC, UC_to_inc_PC, UC_to_carga_ACC, UC_to_carga_NZ,
+	UC_to_carga_RI, UC_to_carga_REM, UC_to_carga_RDM, UC_to_sel_MUX_REM, UC_to_sel_MUX_RDM, UC_to_ULA, r_w);
+
+Data_Path : Datapath
+	PORT MAP (CLK, RST, UC_to_carga_ACC, UC_to_ULA, UC_to_carga_NZ, UC_to_carga_RI, UC_to_carga_PC, UC_to_carga_RDM, 
+	UC_to_carga_REM, UC_to_inc_PC, UC_to_sel_MUX_RDM, UC_to_sel_MUX_REM, MEM_to_MUX_RDM, RDM_to_MEM, REM_to_MEM, DECOD_to_UC,
+	N_to_UC, Z_to_UC, OUT_ALU_FIM, OUT_PC_FIM, OUT_ACC_FIM);
+
+
+OUT_REM_FIM <= REM_TO_MEM;
+OUT_RDM_FIM <= RDM_TO_MEM;
+OUT_Z_FIM <= Z_TO_UC;
+OUT_N_FIM <= N_TO_UC;
+
+end Behavioral;

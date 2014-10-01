@@ -1,0 +1,190 @@
+----------------------------------------------------------------------------------
+-- University: UFRGS
+-- Names: Brunno e Guilherme
+-- 
+-- Create Date:    00:45:10 09/19/2014 
+-- Design Name: 
+-- Module Name:    FSM_UC - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+-- PADRÃO:
+-- in_INSTR (0) = NOP;
+-- in_INSTR (1) = LDA;
+-- in_INSTR (2) = STA;
+-- in_INSTR (3) = ADD;
+-- in_INSTR (4) = OR;
+-- in_INSTR (5) = AND;
+-- in_INSTR (6) = NOT;
+-- in_INSTR (7) = JMP;
+-- in_INSTR (8) = JZ;
+-- in_INSTR (9) = JN;
+-- in_INSTR (10) = HLT;
+
+entity FSM_UC is
+    Port ( in_INSTR : in  STD_LOGIC_VECTOR (10 downto 0);
+           in_N : in  STD_LOGIC;
+           in_Z : in  STD_LOGIC;
+			  CLK : in STD_LOGIC;
+			  RST : in STD_LOGIC;
+           carga_PC : out  STD_LOGIC;
+			  inc_PC : out STD_LOGIC;
+           carga_ACC : out  STD_LOGIC;
+			  carga_NZ : out STD_LOGIC;
+           carga_RI : out  STD_LOGIC;
+           carga_REM : out  STD_LOGIC;
+           carga_RDM : out  STD_LOGIC;
+           sel_MUX_REM : out  STD_LOGIC; -- 0 = vem do PC; 1 = vem do RDM
+			  sel_MUX_RDM : out STD_LOGIC; -- 0 = vem do ACC; 1 = vem da memória
+			  
+           sel_ULA : out  STD_LOGIC_VECTOR (2 downto 0);
+			  -- 000 = ADD; 001 = AND; 010 = OR; 011 = NOT; 100 = LOAD;
+			  
+           read_write : out STD_LOGIC_VECTOR (0 downto 0));
+			  -- 0 = READ; 1 = WRITE;
+end FSM_UC;
+
+architecture Behavioral of FSM_UC is
+
+type T_STATE is (t0, t1, t2, t3, t4, t5, t6, t7, t0ant);
+
+signal prox_estado, estado : T_STATE;
+
+begin
+
+-- Process que controla a a máquina de estados
+process (CLK, RST)
+begin
+
+	if (RST = '1') then
+		estado <= t0ant;
+	elsif (CLK'event and CLK = '1') then
+		estado <= prox_estado;
+	end if;
+
+end process;
+
+-- Process que define a lógica de cada estado
+process (estado)
+begin
+
+	-- ZERA OS SINAIS
+   carga_PC <= '0';
+   carga_ACC <= '0';
+   carga_RI <= '0';
+   carga_REM <= '0';
+   carga_RDM <= '0';
+	carga_NZ <= '0';
+   sel_MUX_RDM <= '0';
+	sel_MUX_REM <= '1';
+	inc_PC <= '0';
+	read_write <= "0";
+	
+	
+	case estado is
+	
+	-- Fase de busca
+	
+	when t0ant =>
+	prox_estado <= t0;
+	
+	when t0 => 
+	carga_REM <= '1'; sel_MUX_REM <= '0'; 
+	prox_estado <= t1;
+	
+	when t1 => 
+	INC_PC <= '1'; carga_RDM <= '1'; sel_MUX_RDM <= '1';
+	prox_estado <= t2;
+	
+	when t2 => 
+		carga_RI <= '1';
+		prox_estado <= t3;
+		
+	-- PADRÃO:
+-- in_INSTR (0) = NOP;
+-- in_INSTR (1) = LDA;
+-- in_INSTR (2) = STA;
+-- in_INSTR (3) = ADD;
+-- in_INSTR (4) = OR;
+-- in_INSTR (5) = AND;
+-- in_INSTR (6) = NOT;
+-- in_INSTR (7) = JMP;
+-- in_INSTR (8) = JZ;
+-- in_INSTR (9) = JN;
+-- in_INSTR (10) = HLT;
+	-- Fase de execução
+	when t3 => 
+	if (in_INSTR(1) = '1' or in_INSTR(2) = '1' or in_INSTR(3) = '1' or in_INSTR(4) = '1' or in_INSTR(5) = '1' or in_INSTR(7) = '1' or (in_INSTR(8) = '1' and in_Z = '1') or (in_INSTR(9) = '1' and in_N = '1')) then
+		sel_MUX_REM <= '0'; carga_REM <= '1';
+	elsif (in_INSTR(6) = '1') then
+		sel_ULA <= "011"; carga_ACC <= '1'; carga_NZ <= '1';
+	elsif ((in_INSTR(8) = '1' and in_Z = '0') or (in_INSTR(9) = '1' and in_N = '0')) then
+		inc_PC <= '1';
+	elsif (in_INSTR(10) = '1') then
+		prox_estado <= t3;
+	end if;
+	prox_estado <= t4;
+	
+	when t4 =>
+	if (in_INSTR(1) = '1' or in_INSTR(2) = '1' or in_INSTR(3) = '1' or in_INSTR(4) = '1' or in_INSTR(5) = '1') then
+		carga_RDM <= '1'; sel_MUX_RDM <= '1'; inc_PC <= '1';
+	elsif (in_INSTR(7) = '1' or (in_INSTR(8) = '1' and in_Z = '1') or (in_INSTR(9) = '1' and in_N = '1')) then
+		carga_RDM <= '1'; sel_MUX_RDM <= '1';
+	end if;
+	prox_estado <= t5;
+	
+	when t5 =>
+	if (in_INSTR(1) = '1' or in_INSTR(2) = '1' or in_INSTR(3) = '1' or in_INSTR(4) = '1' or in_INSTR(5) = '1') then
+		carga_REM <= '1'; sel_MUX_REM <= '1';
+	elsif (in_INSTR(7) = '1' or (in_INSTR(8) = '1' and in_Z = '1') or (in_INSTR(9) = '1' and in_N = '1')) then
+		carga_PC <= '1';
+	end if;
+	prox_estado <= t6;
+	
+	when t6 =>
+	if (in_INSTR(1) = '1' or in_INSTR(3) = '1' or in_INSTR(4) = '1' or in_INSTR(5) = '1') then
+		carga_RDM <= '1'; sel_MUX_RDM <= '1';
+	elsif (in_INSTR(2) = '1') then
+		carga_RDM <= '1'; sel_MUX_RDM <= '0'; read_write <= "1";
+	end if;
+	prox_estado <= t7;
+	
+	when t7 =>
+	if (in_INSTR(1) = '1') then
+		carga_NZ <= '1'; sel_ULA <= "100"; carga_ACC <= '1';
+	elsif (in_INSTR(3) = '1') then
+		carga_NZ <= '1'; sel_ULA <= "000"; carga_ACC <= '1';
+	elsif (in_INSTR(4) = '1') then
+		carga_NZ <= '1'; sel_ULA <= "010"; carga_ACC <= '1';
+	elsif (in_INSTR(5) = '1') then
+		carga_NZ <= '1'; sel_ULA <= "001"; carga_ACC <= '1';
+	end if;
+	prox_estado <= t0;
+	
+	end case;
+	
+end process;
+
+end Behavioral;

@@ -1,0 +1,364 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    11:01:41 09/18/2014 
+-- Design Name: 
+-- Module Name:    Datapath - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity Datapath is
+    Port ( 
+			  -- Sinais externos
+			  CLK : in  STD_LOGIC;
+           RST : in  STD_LOGIC;
+			  
+			  --Sinais de controle (vindos da UC)
+           carga_ACC : in  STD_LOGIC;
+           sel_ULA : in  STD_LOGIC_VECTOR (2 downto 0);
+           carga_NZ : in  STD_LOGIC;
+           carga_RI : in  STD_LOGIC;
+           carga_PC : in  STD_LOGIC;
+           carga_RDM : in  STD_LOGIC;
+           carga_REM : in  STD_LOGIC;
+           inc_PC : in  STD_LOGIC;
+           sel_MUX_RDM : in  STD_LOGIC;
+			  sel_MUX_REM : in STD_LOGIC;
+			  
+			  -- Sinais vindos da memória
+			  in_MUX_RDM : in STD_LOGIC_VECTOR (7 downto 0);
+			  
+			  -- Sinais saindo do Datapath
+           out_RDM : out  STD_LOGIC_VECTOR (7 downto 0);
+           out_REM : out  STD_LOGIC_VECTOR (7 downto 0);
+           out_DECOD : out  STD_LOGIC_VECTOR (10 downto 0);
+           out_N : out  STD_LOGIC;
+           out_Z : out  STD_LOGIC;
+			  
+			  -- PARA EFEITOS DE SIMULAÇÃO
+			  out_ALU : out STD_LOGIC_VECTOR (7 downto 0);
+			  out_PC_SIM : out STD_LOGIC_VECTOR (7 downto 0);
+			  out_ACC_SIM : out STD_LOGIC_VECTOR (7 downto 0));
+			  
+end Datapath;
+
+architecture Behavioral of Datapath is
+
+-- sinais dos registradores
+signal IN_ACC, OUT_ACC : STD_LOGIC_VECTOR(7 downto 0);
+
+signal IN_REM : STD_LOGIC_VECTOR (7 downto 0);
+
+signal IN_RDM, OUT_RDM_AUX : STD_LOGIC_VECTOR (7 downto 0);
+
+signal IN_PC, OUT_PC : STD_LOGIC_VECTOR (7 downto 0);
+
+signal IN_N, IN_Z : STD_LOGIC;
+
+signal IN_RI : STD_LOGIC_VECTOR (7 downto 0);
+signal OUT_RI : STD_LOGIC_VECTOR (7 downto 4);
+
+
+-- entrada do decodificador (4 bits)
+signal IN_DECOD : STD_LOGIC_VECTOR (7 downto 4);
+
+-- entradas e saída da ULA
+signal A_ULA, B_ULA, OUT_ULA : STD_LOGIC_VECTOR (7 downto 0);
+signal OUT_ULA_N, OUT_ULA_Z : STD_LOGIC;
+
+-- entrada e saída do MUX_RDM
+signal B_MUX_RDM, OUT_MUX_RDM : STD_LOGIC_VECTOR (7 downto 0);
+
+-- entradas e saída do MUX_REM
+signal A_MUX_REM, B_MUX_REM, OUT_MUX_REM : STD_LOGIC_VECTOR (7 downto 0);
+
+begin
+
+--SIMULAÇÃO
+
+out_PC_SIM <= OUT_PC;
+out_ACC_SIM <= OUT_ACC;
+
+-- FIM SIMULAÇÃO
+
+-- REGISTRADOR ACCUMULATOR
+ACC : process (CLK, RST)
+begin
+
+	if(RST = '1') then
+		OUT_ACC <= (OTHERS => '0');
+	elsif (CLK'event and CLK = '1') then
+		if (carga_ACC = '1') then
+			OUT_ACC <= IN_ACC;
+		end if;
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO ACC
+
+IN_ACC <= OUT_ULA;
+
+-- FIM DO ACC
+
+
+-- REGISTRADOR REM
+REG_REM : process (CLK, RST)
+begin
+
+	if(RST = '1') then
+		out_REM <= (OTHERS => '0');
+	elsif (CLK'event and CLK = '1') then
+		if(carga_REM = '1') then
+			out_REM <= IN_REM;
+		end if;
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO REM
+
+IN_REM <= OUT_MUX_REM;
+
+-- FIM DO REM
+
+
+-- REGISTRADOR RDM
+REG_RDM : process (CLK, RST)
+begin
+
+	if(RST = '1') then
+		OUT_RDM_AUX <= (OTHERS => '0');
+	elsif (CLK'event and CLK = '1') then
+		if(carga_RDM = '1') then
+			OUT_RDM_AUX <= IN_RDM;
+		end if;
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO RDM
+
+IN_RDM <= OUT_MUX_RDM;
+
+-- FIM DO RDM
+
+
+-- REGISTRADOR PC
+REG_PC : process (CLK, RST)
+begin
+
+	if(RST = '1') then
+		OUT_PC <= (OTHERS => '0');
+	elsif (CLK'event and CLK = '1') then
+		if(carga_PC = '1' and inc_PC = '0') then
+			OUT_PC <= IN_PC;
+		elsif (carga_PC = '0' and inc_PC = '1') then
+			OUT_PC <= OUT_PC + 1;
+		end if;
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO PC
+
+IN_PC <= OUT_RDM_AUX;
+
+-- FIM DO PC
+
+
+-- REGISTRADOR NZ
+REG_NZ : process (CLK, RST)
+begin
+
+	if (RST = '1') then
+		out_N <= '0';
+		out_Z <= '0';
+	elsif (CLK'event and CLK = '1') then
+		if(carga_NZ = '1') then
+			out_N <= IN_N;
+			out_Z <= IN_Z;
+		end if;
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO N_Z
+
+IN_N <= OUT_ULA_N;
+IN_Z <= OUT_ULA_Z;
+
+-- FIM DO N_Z
+
+
+-- REGISTRADOR RI
+REG_RI : process (CLK, RST)
+begin
+
+	if (RST = '1') then
+		OUT_RI <= (OTHERS => '0');
+	elsif (CLK'event and CLK = '1') then
+		if(carga_RI = '1') then
+			OUT_RI <= IN_RI (7 downto 4);
+		end if;
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO RI
+
+IN_RI <= OUT_RDM_AUX;
+
+-- FIM DO RI
+
+
+-- DECODIFICADOR 4X16 (Na verdade não são necessárias 16 saídas, apenas um número equivalente ao número de instruções, que são 11)
+DECOD : process (IN_DECOD)
+begin
+
+-- PADRÃO:
+-- in_INSTR (0) = NOP;
+-- in_INSTR (1) = LDA;
+-- in_INSTR (2) = STA;
+-- in_INSTR (3) = ADD;
+-- in_INSTR (4) = OR;
+-- in_INSTR (5) = AND;
+-- in_INSTR (6) = NOT;
+-- in_INSTR (7) = JMP;
+-- in_INSTR (8) = JZ;
+-- in_INSTR (9) = JN;
+-- in_INSTR (10) = HLT;
+
+	case IN_DECOD is
+		when "0000" => out_DECOD <= (0 => '1', OTHERS => '0');
+		when "0010" => out_DECOD <= (1 => '1', OTHERS => '0');
+		when "0001" => out_DECOD <= (2 => '1', OTHERS => '0');
+		when "0011" => out_DECOD <= (3 => '1', OTHERS => '0');
+		when "0100" => out_DECOD <= (4 => '1', OTHERS => '0');
+		when "0101" => out_DECOD <= (5 => '1', OTHERS => '0');
+		when "0110" => out_DECOD <= (6 => '1', OTHERS => '0');
+		when "1000" => out_DECOD <= (7 => '1', OTHERS => '0');
+		when "1001" => out_DECOD <= (9 => '1', OTHERS => '0');
+		when "1010" => out_DECOD <= (8 => '1', OTHERS => '0');
+		when "1111" => out_DECOD <= (10 => '1', OTHERS => '0');
+		when others => out_DECOD <= (OTHERS => '0');
+	end case;
+	
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO DECOD
+
+IN_DECOD <= OUT_RI;
+
+-- FIM DO DECOD
+
+
+-- ULA
+ULA : process (A_ULA, B_ULA, sel_ULA)
+begin
+
+	case sel_ULA is
+		when "000" => OUT_ULA <= A_ULA + B_ULA;
+
+		when "001" => OUT_ULA <= A_ULA AND B_ULA;
+		
+		when "010" => OUT_ULA <= A_ULA OR B_ULA;
+
+		when "011" => OUT_ULA <= (NOT B_ULA);
+
+--		when "100" => OUT_ULA <= A_ULA;
+		when OTHERS => OUT_ULA <= A_ULA;
+--		when OTHERS => OUT_ULA <= (OTHERS => '0');
+	end case;
+
+	-- ACC VAI CONECTADO AO B_ULA
+	-- RDM CONECTA AO A_ULA (PARA LOAD)
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DA ULA
+
+A_ULA <= OUT_RDM_AUX;
+B_ULA <= OUT_ACC;
+
+-- FIM DA ULA
+
+NZ : process (OUT_ULA)
+begin
+
+	if (OUT_ULA >= "10000000") then
+		OUT_ULA_Z <= '0'; OUT_ULA_N <= '1';
+	elsif (OUT_ULA = "00000000") then
+		OUT_ULA_Z <= '1'; OUT_ULA_N <= '0';
+	else
+		OUT_ULA_Z <= '0'; OUT_ULA_N <= '0';
+	end if;
+
+end process;
+
+out_ALU <= OUT_ULA;
+
+-- MUX 2x1 8 bits
+MUX_REM : process (A_MUX_REM, B_MUX_REM, sel_MUX_REM)
+begin
+
+	if(sel_MUX_REM = '0') then
+		OUT_MUX_REM <= A_MUX_REM; -- vem do PC
+	else
+		OUT_MUX_REM <= B_MUX_REM; -- vem do RDM
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS DO MUX_REM
+
+A_MUX_REM <= OUT_PC;
+B_MUX_REM <= OUT_RDM_AUX;
+
+-- FIM DO MUX_REM
+
+
+-- MUX 2x1 8 bits
+MUX_RDM : process (in_MUX_RDM, B_MUX_RDM, sel_MUX_RDM)
+begin
+
+	if(sel_MUX_RDM = '0') then
+		OUT_MUX_RDM <= B_MUX_RDM; -- vem do ACC (pois sel_MUX_RDM é 0)
+	else
+		OUT_MUX_RDM <= in_MUX_RDM; -- vem da Memória (pois sel_MUX_RDM é 1)
+	end if;
+
+end process;
+
+-- LIGAÇÕES RELATIVAS ÀS ENTRADAS E SAÍDAS DO MUX_RDM
+
+B_MUX_RDM <= OUT_ACC;
+
+out_RDM <= OUT_RDM_AUX;
+
+-- FIM DO MUX_RDM
+
+
+end Behavioral;

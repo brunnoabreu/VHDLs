@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/brunno/Documents/vhdl/SAD/readFile.xst" -ofn "/home/brunno/Documents/vhdl/SAD/readFile.syr" 

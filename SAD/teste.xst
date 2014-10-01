@@ -1,0 +1,5 @@
+set -tmpdir "/home/brunno/Documents/vhdl/SAD/xst/projnav.tmp"
+set -xsthdpdir "/home/brunno/Documents/vhdl/SAD/xst"
+elaborate
+-ifn teste.prj
+-ifmt mixed

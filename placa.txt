@@ -1,0 +1,108 @@
+entity Placa is
+	Port (
+	but: in STD_LOGIC_VECTOR(3 downto 0);
+	sw: in STD_LOGIC_VECTOR(7 downto 0);
+	clk: in STD_LOGIC;
+	rst: in STD_LOGIC;
+	led: out STD_LOGIC_VECTOR(7 downto 0);
+	seg: out STD_LOGIC_VECTOR(6 downto 0);
+	an: out STD_LOGIC_VECTOR(3 downto 0);	
+end Placa;
+
+architecture Behavioral of Placa is
+	type t_state is (e1,e2,e3,e4);
+	signal clk_menor: STD_LOGIC;
+	signal cont: STD_LOGIC_VECTOR(15 downto 0);
+	signal estado,prox: t_state ;
+	signal sel1,sel1,sel3,sel4: STD_LOGIC_VECTOR(3 downto 0);
+	
+	
+begin
+
+	process(clk)
+	begin
+		if(clk'event and clk ='1') then
+			contador <= contador + 1;
+			if(contador='50000') then
+				contador <= 0;
+				clk_menor <= not(clk_menor);
+			end if;
+		end if;
+	end process;
+	
+	process(clk_menor)
+	begin
+		if(clk_menor'event and clk_menor='1') then
+			if(rst='0') then
+				estado <= e0;
+			else 
+				estado <= prox;
+			end if;
+		end if;
+	end process;
+	
+	process(clk_menor,estado)
+	begin
+		case estado is
+			When e1 => an<="0001";
+				case sel1 is
+					WHEN "0000" => seg<="1000000";
+					WHEN "0001" => seg<="1111001";
+					WHEN "0010" => seg<="0100100";
+					WHEN "0011" => seg<="0110000";
+					WHEN "0100" => seg<="0011001";
+					WHEN "0101" => seg<="0010010";
+					WHEN "0110" => seg<="0000010";
+					WHEN "0111" => seg<="1111000";
+					WHEN "1000" => seg<="0000000";
+					WHEN "1001" => seg<="0010000";
+					WHEN others => seg<="0111111";
+				end case;
+				prox<=e2 when (clk_menor='1') else e1;
+			When e2 => an<="0010";
+				case sel2 is
+					WHEN "0000" => seg<="1000000";
+					WHEN "0001" => seg<="1111001";
+					WHEN "0010" => seg<="0100100";
+					WHEN "0011" => seg<="0110000";
+					WHEN "0100" => seg<="0011001";
+					WHEN "0101" => seg<="0010010";
+					WHEN "0110" => seg<="0000010";
+					WHEN "0111" => seg<="1111000";
+					WHEN "1000" => seg<="0000000";
+					WHEN "1001" => seg<="0010000";
+					WHEN others => seg<="0111111";
+				end case;
+				prox<=e3 when (clk_menor='1') else e2;
+			When e3 => an<="0100";
+				case sel3 is
+					WHEN "0000" => seg<="1000000";
+					WHEN "0001" => seg<="1111001";
+					WHEN "0010" => seg<="0100100";
+					WHEN "0011" => seg<="0110000";
+					WHEN "0100" => seg<="0011001";
+					WHEN "0101" => seg<="0010010";
+					WHEN "0110" => seg<="0000010";
+					WHEN "0111" => seg<="1111000";
+					WHEN "1000" => seg<="0000000";
+					WHEN "1001" => seg<="0010000";
+					WHEN others => seg<="0111111";
+				end case;
+				prox<=e4 when (clk_menor='1') else e3;
+			When e4 => an<="1000";
+				case sel4 is
+					WHEN "0000" => seg<="1000000";
+					WHEN "0001" => seg<="1111001";
+					WHEN "0010" => seg<="0100100";
+					WHEN "0011" => seg<="0110000";
+					WHEN "0100" => seg<="0011001";
+					WHEN "0101" => seg<="0010010";
+					WHEN "0110" => seg<="0000010";
+					WHEN "0111" => seg<="1111000";
+					WHEN "1000" => seg<="0000000";
+					WHEN "1001" => seg<="0010000";
+					WHEN others => seg<="0111111";
+				end case;
+				prox<=e1 when (clk_menor='1') else e4;
+		end case;
+	end process;
