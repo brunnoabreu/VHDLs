@@ -108,27 +108,1204 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/brunno/Documents/vhdl/SAD/teste.vhd" in Library work.
-Architecture teste of Entity teste is up to date.
+Package <teste> compiled.
+Package body <teste> compiled.
 Compiling vhdl file "/home/brunno/Documents/vhdl/SAD/genericSub.vhd" in Library work.
 Architecture behavioral of Entity genericsub is up to date.
 Compiling vhdl file "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd" in Library work.
 Architecture behavioral of Entity genericadder is up to date.
 Compiling vhdl file "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" in Library work.
-Entity <calcsad> compiled.
-ERROR:HDLParsers:3312 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 89. Undefined symbol 'widthX'.
-ERROR:HDLParsers:1209 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 89. widthX: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 94. Undefined symbol 'widthX'.
-ERROR:HDLParsers:1209 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 94. widthX: Undefined symbol (last report in this block)
-ERROR:HDLParsers:851 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 93. Formal a of genericAdder with no default value must be associated with an actual value.
-ERROR:HDLParsers:3312 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 99. Undefined symbol 'widthX'.
-ERROR:HDLParsers:1209 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 99. widthX: Undefined symbol (last report in this block)
-ERROR:HDLParsers:851 - "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd" Line 98. Formal a of genericAdder with no default value must be associated with an actual value.
+Architecture behavioral of Entity calcsad is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <calcSAD> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <genericSub> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 8
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 9
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 10
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 11
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 12
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 13
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 14
+
+Analyzing hierarchy for entity <genericAdder> in library <work> (architecture <behavioral>) with generics.
+	widthX = 15
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <calcSAD> in library <work> (Architecture <behavioral>).
+Entity <calcSAD> analyzed. Unit <calcSAD> generated.
+
+Analyzing Entity <genericSub> in library <work> (Architecture <behavioral>).
+Entity <genericSub> analyzed. Unit <genericSub> generated.
+
+Analyzing generic Entity <genericAdder.1> in library <work> (Architecture <behavioral>).
+	widthX = 8
+Entity <genericAdder.1> analyzed. Unit <genericAdder.1> generated.
+
+Analyzing generic Entity <genericAdder.2> in library <work> (Architecture <behavioral>).
+	widthX = 9
+Entity <genericAdder.2> analyzed. Unit <genericAdder.2> generated.
+
+Analyzing generic Entity <genericAdder.3> in library <work> (Architecture <behavioral>).
+	widthX = 10
+Entity <genericAdder.3> analyzed. Unit <genericAdder.3> generated.
+
+Analyzing generic Entity <genericAdder.4> in library <work> (Architecture <behavioral>).
+	widthX = 11
+Entity <genericAdder.4> analyzed. Unit <genericAdder.4> generated.
+
+Analyzing generic Entity <genericAdder.5> in library <work> (Architecture <behavioral>).
+	widthX = 12
+Entity <genericAdder.5> analyzed. Unit <genericAdder.5> generated.
+
+Analyzing generic Entity <genericAdder.6> in library <work> (Architecture <behavioral>).
+	widthX = 13
+Entity <genericAdder.6> analyzed. Unit <genericAdder.6> generated.
+
+Analyzing generic Entity <genericAdder.7> in library <work> (Architecture <behavioral>).
+	widthX = 14
+Entity <genericAdder.7> analyzed. Unit <genericAdder.7> generated.
+
+Analyzing generic Entity <genericAdder.8> in library <work> (Architecture <behavioral>).
+	widthX = 15
+Entity <genericAdder.8> analyzed. Unit <genericAdder.8> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <genericSub>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericSub.vhd".
+    Found 8-bit subtractor for signal <c>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericSub> synthesized.
+
+
+Synthesizing Unit <genericAdder_1>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<8>> is never assigned. Tied to value 0.
+    Found 8-bit adder for signal <c_7_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_1> synthesized.
+
+
+Synthesizing Unit <genericAdder_2>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<9>> is never assigned. Tied to value 0.
+    Found 9-bit adder for signal <c_8_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_2> synthesized.
+
+
+Synthesizing Unit <genericAdder_3>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<10>> is never assigned. Tied to value 0.
+    Found 10-bit adder for signal <c_9_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_3> synthesized.
+
+
+Synthesizing Unit <genericAdder_4>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<11>> is never assigned. Tied to value 0.
+    Found 11-bit adder for signal <c_10_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_4> synthesized.
+
+
+Synthesizing Unit <genericAdder_5>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<12>> is never assigned. Tied to value 0.
+    Found 12-bit adder for signal <c_11_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_5> synthesized.
+
+
+Synthesizing Unit <genericAdder_6>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<13>> is never assigned. Tied to value 0.
+    Found 13-bit adder for signal <c_12_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_6> synthesized.
+
+
+Synthesizing Unit <genericAdder_7>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<14>> is never assigned. Tied to value 0.
+    Found 14-bit adder for signal <c_13_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_7> synthesized.
+
+
+Synthesizing Unit <genericAdder_8>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/genericAdder.vhd".
+WARNING:Xst:1305 - Output <c<15>> is never assigned. Tied to value 0.
+    Found 15-bit adder for signal <c_14_0$add0000> created at line 47.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <genericAdder_8> synthesized.
+
+
+Synthesizing Unit <calcSAD>.
+    Related source file is "/home/brunno/Documents/vhdl/SAD/calcSAD.vhd".
+WARNING:Xst:647 - Input <en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <c<7><1:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<6><0><15>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<6><1><15>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<6><2:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<5><0><15:14>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<5><1><15:14>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<5><2><15:14>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<5><3><15:14>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<5><3><13:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<5><4:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><0><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><1><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><2><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><3><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><4><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><5><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><6><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<4><6><12:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><7><15:13>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<4><7><12:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<4><8:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><0><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><1><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><2><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><3><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><4><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><5><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><6><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><7><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><8><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><9><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><10><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><11><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><12><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<3><12><11:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><13><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<3><13><11:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><14><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<3><14><11:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><15><15:12>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<3><15><11:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<3><16:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><0><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><1><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><2><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><3><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><4><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><5><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><6><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><7><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><8><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><9><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><10><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><11><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><12><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><13><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><14><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><15><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><16><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><17><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><18><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><19><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><20><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><21><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><22><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><23><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><24><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><24><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><25><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><25><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><26><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><26><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><27><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><27><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><28><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><28><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><29><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><29><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><30><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><30><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><31><15:11>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<2><31><10:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<2><32:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><0><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><1><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><2><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><3><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><4><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><5><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><6><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><7><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><8><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><9><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><10><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><11><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><12><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><13><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><14><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><15><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><16><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><17><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><18><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><19><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><20><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><21><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><22><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><23><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><24><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><25><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><26><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><27><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><28><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><29><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><30><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><31><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><32><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><33><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><34><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><35><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><36><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><37><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><38><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><39><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><40><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><41><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><42><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><43><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><44><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><45><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><46><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><47><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><48><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><48><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><49><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><49><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><50><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><50><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><51><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><51><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><52><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><52><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><53><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><53><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><54><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><54><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><55><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><55><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><56><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><56><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><57><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><57><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><58><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><58><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><59><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><59><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><60><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><60><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><61><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><61><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><62><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><62><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><63><15:10>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<1><63><9:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<1><64:127>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><0><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><1><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><2><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><3><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><4><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><5><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><6><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><7><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><8><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><9><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><10><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><11><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><12><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><13><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><14><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><15><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><16><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><17><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><18><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><19><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><20><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><21><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><22><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><23><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><24><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><25><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><26><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><27><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><28><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><29><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><30><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><31><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><32><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><33><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><34><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><35><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><36><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><37><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><38><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><39><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><40><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><41><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><42><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><43><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><44><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><45><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><46><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><47><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><48><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><49><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><50><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><51><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><52><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><53><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><54><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><55><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><56><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><57><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><58><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><59><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><60><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><61><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><62><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><63><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><64><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><65><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><66><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><67><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><68><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><69><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><70><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><71><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><72><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><73><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><74><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><75><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><76><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><77><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><78><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><79><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><80><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><81><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><82><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><83><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><84><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><85><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><86><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><87><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><88><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><89><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><90><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><91><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><92><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><93><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><94><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><95><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><96><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><96><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><97><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><97><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><98><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><98><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><99><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><99><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><100><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><100><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><101><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><101><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><102><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><102><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><103><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><103><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><104><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><104><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><105><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><105><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><106><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><106><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><107><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><107><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><108><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><108><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><109><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><109><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><110><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><110><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><111><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><111><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><112><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><112><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><113><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><113><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><114><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><114><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><115><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><115><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><116><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><116><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><117><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><117><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><118><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><118><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><119><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><119><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><120><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><120><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><121><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><121><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><122><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><122><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><123><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><123><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><124><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><124><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><125><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><125><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><126><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><126><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <c<0><127><15:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <c<0><127><8:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <calcSAD> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 511
+ 10-bit adder                                          : 32
+ 11-bit adder                                          : 16
+ 12-bit adder                                          : 8
+ 13-bit adder                                          : 4
+ 14-bit adder                                          : 2
+ 15-bit adder                                          : 1
+ 8-bit adder                                           : 128
+ 8-bit subtractor                                      : 256
+ 9-bit adder                                           : 64
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[4].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[0].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[5].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[0].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[6].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[0].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[7].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[12].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[0].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[13].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[0].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[14].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[0].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[1].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[2].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[3].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[4].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[5].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[6].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[7].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[8].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[9].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[10].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[11].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[12].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[13].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[14].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen0[15].gen01[15].subX> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[65].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[66].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[67].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[68].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[69].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[70].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[71].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[72].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[73].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[74].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[75].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[76].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[77].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[78].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[79].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[80].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[81].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[82].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[83].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[84].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[85].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[86].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[87].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[88].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[89].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[90].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[91].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[92].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[93].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[94].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[95].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[96].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[97].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[98].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[99].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[100].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[101].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[102].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[103].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[104].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[105].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[106].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[107].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[108].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[109].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[110].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[111].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[112].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[113].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[114].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[115].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[116].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[117].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[118].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[119].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[120].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[121].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[122].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[123].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[124].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[125].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[126].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[0].gen2[127].gen3.add0> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[33].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[34].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[35].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[36].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[37].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[38].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[39].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[40].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[41].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[42].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[43].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[44].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[45].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[46].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[47].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[48].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[49].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[50].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[51].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[52].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[53].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[54].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[55].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[56].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[57].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[58].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[59].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[60].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[61].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[62].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[1].gen2[63].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[17].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[18].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[19].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[20].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[21].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[22].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[23].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[24].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[25].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[26].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[27].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[28].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[29].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[30].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[2].gen2[31].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[9].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[10].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[11].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[12].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[13].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[14].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[3].gen2[15].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[4].gen2[5].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[4].gen2[6].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[4].gen2[7].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <gen1[5].gen2[3].gen4.addx> is unconnected in block <calcSAD>.
+   It will be removed from the design.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 511
+ 10-bit adder                                          : 32
+ 11-bit adder                                          : 16
+ 12-bit adder                                          : 8
+ 13-bit adder                                          : 4
+ 14-bit adder                                          : 2
+ 15-bit adder                                          : 1
+ 8-bit adder                                           : 128
+ 8-bit subtractor                                      : 256
+ 9-bit adder                                           : 64
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <calcSAD> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block calcSAD, actual ratio is 125.
+Optimizing block <calcSAD> to meet ratio 100 (+ 5) of 960 slices :
+WARNING:Xst:2254 - Area constraint could not be met for block <calcSAD>, final ratio is 114.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : calcSAD.ngr
+Top Level Output File Name         : calcSAD
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 4113
+
+Cell Usage :
+# BELS                             : 5933
+#      GND                         : 1
+#      LUT2                        : 1778
+#      LUT3                        : 186
+#      LUT4                        : 186
+#      MUXCY                       : 1793
+#      VCC                         : 1
+#      XORCY                       : 1988
+# IO Buffers                       : 2096
+#      IBUF                        : 2080
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                     1099  out of    960   114% (*) 
+ Number of 4 input LUTs:               2150  out of   1920   111% (*) 
+ Number of IOs:                        4113
+ Number of bonded IOBs:                2096  out of     83   2525% (*) 
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 28.001ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 5928278023 / 15
+-------------------------------------------------------------------------
+Delay:               28.001ns (Levels of Logic = 33)
+  Source:            matA<0><1><0> (PAD)
+  Destination:       S<13> (PAD)
+
+  Data Path: matA<0><1><0> to S<13>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.509  matA_0__1__0_IBUF (matA_0__1__0_IBUF)
+     LUT2:I0->O            1   0.612   0.000  gen0[0].gen01[1].subX/Msub_c_lut<0> (gen0[0].gen01[1].subX/Msub_c_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  gen0[0].gen01[1].subX/Msub_c_cy<0> (gen0[0].gen01[1].subX/Msub_c_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  gen0[0].gen01[1].subX/Msub_c_cy<1> (gen0[0].gen01[1].subX/Msub_c_cy<1>)
+     XORCY:CI->O           1   0.699   0.509  gen0[0].gen01[1].subX/Msub_c_xor<2> (subVec<1><2>)
+     LUT2:I0->O            1   0.612   0.000  gen1[0].gen2[1].gen3.add0/Madd_c_7_0_add0000_lut<2> (gen1[0].gen2[1].gen3.add0/Madd_c_7_0_add0000_lut<2>)
+     MUXCY:S->O            1   0.404   0.000  gen1[0].gen2[1].gen3.add0/Madd_c_7_0_add0000_cy<2> (gen1[0].gen2[1].gen3.add0/Madd_c_7_0_add0000_cy<2>)
+     XORCY:CI->O           1   0.699   0.509  gen1[0].gen2[1].gen3.add0/Madd_c_7_0_add0000_xor<3> (c<0><1><3>)
+     LUT2:I0->O            1   0.612   0.000  gen1[1].gen2[1].gen4.addx/Madd_c_8_0_add0000_lut<3> (gen1[1].gen2[1].gen4.addx/Madd_c_8_0_add0000_lut<3>)
+     MUXCY:S->O            1   0.404   0.000  gen1[1].gen2[1].gen4.addx/Madd_c_8_0_add0000_cy<3> (gen1[1].gen2[1].gen4.addx/Madd_c_8_0_add0000_cy<3>)
+     XORCY:CI->O           2   0.699   0.449  gen1[1].gen2[1].gen4.addx/Madd_c_8_0_add0000_xor<4> (c<1><1><4>)
+     LUT3:I1->O            1   0.612   0.509  gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000C31 (gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000C3)
+     LUT4:I0->O            1   0.612   0.000  gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000_Madd_lut<5> (gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000_Madd_lut<5>)
+     MUXCY:S->O            1   0.404   0.000  gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000_Madd_cy<5> (gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000_Madd_cy<5>)
+     XORCY:CI->O           1   0.699   0.509  gen1[2].gen2[1].gen4.addx/Madd_c_9_0_add0000_Madd_xor<6> (c<2><1><6>)
+     LUT2:I0->O            1   0.612   0.000  gen1[3].gen2[1].gen4.addx/Madd_c_10_0_add0000_lut<6> (gen1[3].gen2[1].gen4.addx/Madd_c_10_0_add0000_lut<6>)
+     MUXCY:S->O            1   0.404   0.000  gen1[3].gen2[1].gen4.addx/Madd_c_10_0_add0000_cy<6> (gen1[3].gen2[1].gen4.addx/Madd_c_10_0_add0000_cy<6>)
+     XORCY:CI->O           2   0.699   0.449  gen1[3].gen2[1].gen4.addx/Madd_c_10_0_add0000_xor<7> (c<3><1><7>)
+     LUT3:I1->O            1   0.612   0.509  gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000C61 (gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000C6)
+     LUT4:I0->O            1   0.612   0.000  gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000_Madd_lut<8> (gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000_Madd_lut<8>)
+     MUXCY:S->O            1   0.404   0.000  gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000_Madd_cy<8> (gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000_Madd_cy<8>)
+     XORCY:CI->O           1   0.699   0.509  gen1[4].gen2[1].gen4.addx/Madd_c_11_0_add0000_Madd_xor<9> (c<4><1><9>)
+     LUT2:I0->O            1   0.612   0.000  gen1[5].gen2[1].gen4.addx/Madd_c_12_0_add0000_lut<9> (gen1[5].gen2[1].gen4.addx/Madd_c_12_0_add0000_lut<9>)
+     MUXCY:S->O            1   0.404   0.000  gen1[5].gen2[1].gen4.addx/Madd_c_12_0_add0000_cy<9> (gen1[5].gen2[1].gen4.addx/Madd_c_12_0_add0000_cy<9>)
+     XORCY:CI->O           4   0.699   0.568  gen1[5].gen2[1].gen4.addx/Madd_c_12_0_add0000_xor<10> (c<5><1><10>)
+     LUT3:I1->O            1   0.612   0.509  gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000C91 (gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000C9)
+     LUT4:I0->O            1   0.612   0.000  gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000_Madd_lut<11> (gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000_Madd_lut<11>)
+     MUXCY:S->O            1   0.404   0.000  gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000_Madd_cy<11> (gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000_Madd_cy<11>)
+     XORCY:CI->O           1   0.699   0.509  gen1[6].gen2[0].gen4.addx/Madd_c_13_0_add0000_Madd_xor<12> (c<6><0><12>)
+     LUT2:I0->O            1   0.612   0.000  gen1[7].gen2[0].gen5.addF/Madd_c_14_0_add0000_lut<12> (gen1[7].gen2[0].gen5.addF/Madd_c_14_0_add0000_lut<12>)
+     MUXCY:S->O            1   0.404   0.000  gen1[7].gen2[0].gen5.addF/Madd_c_14_0_add0000_cy<12> (gen1[7].gen2[0].gen5.addF/Madd_c_14_0_add0000_cy<12>)
+     XORCY:CI->O           1   0.699   0.357  gen1[7].gen2[0].gen5.addF/Madd_c_14_0_add0000_xor<13> (S_13_OBUF)
+     OBUF:I->O                 3.169          S_13_OBUF (S<13>)
+    ----------------------------------------
+    Total                     28.001ns (21.597ns logic, 6.404ns route)
+                                       (77.1% logic, 22.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.83 secs
+ 
 --> 
 
 
-Total memory usage is 333740 kilobytes
+Total memory usage is 414280 kilobytes
 
-Number of errors   :    8 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  581 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

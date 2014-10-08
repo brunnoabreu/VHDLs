@@ -59,15 +59,19 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1412102803" xil_pn:in_ck="4147842610285330682" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1412102802">
+    <transform xil_pn:end_ts="1412787226" xil_pn:in_ck="2824855554560589920" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1412787226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="calcSAD.vhd"/>
+      <outfile xil_pn:name="genericAdder.vhd"/>
+      <outfile xil_pn:name="genericSub.vhd"/>
+      <outfile xil_pn:name="testRead.vhd"/>
+      <outfile xil_pn:name="teste.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1412096892" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-9044832904953873877" xil_pn:start_ts="1412096892">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -77,10 +81,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1412102803" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-824747732843863125" xil_pn:start_ts="1412102803">
+    <transform xil_pn:end_ts="1412787226" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-7782286378437514022" xil_pn:start_ts="1412787226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1411755807" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1411755807">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -110,8 +113,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1412182013" xil_pn:in_ck="6628429967632446132" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-7163369563102349013" xil_pn:start_ts="1412182010">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1412787334" xil_pn:in_ck="6628429967632446132" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-7163369563102349013" xil_pn:start_ts="1412787316">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -119,9 +123,9 @@
       <outfile xil_pn:name="calcSAD.ngc"/>
       <outfile xil_pn:name="calcSAD.ngr"/>
       <outfile xil_pn:name="calcSAD.prj"/>
+      <outfile xil_pn:name="calcSAD.stx"/>
       <outfile xil_pn:name="calcSAD.syr"/>
       <outfile xil_pn:name="calcSAD.xst"/>
-      <outfile xil_pn:name="calcSAD_vhdl.prj"/>
       <outfile xil_pn:name="calcSAD_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>

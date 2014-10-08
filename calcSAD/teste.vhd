@@ -3,13 +3,14 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 
 package teste is
+function log2_unsigned (  x :  natural ) return natural;
 
-constant WIDTH : integer := 16;
-constant HEIGHT : integer := 16;
+constant WIDTH : integer := 4;
+constant HEIGHT : integer := 4;
 constant TOTAL: integer := WIDTH*HEIGHT;
-constant HALF_TOTAL : integer := TOTAL/2;
+constant HALF_TOTAL : integer := 8;
 constant QUARTER_TOTAL : integer := HALF_TOTAL/2;
-
+constant log2_total : natural := log2_unsigned(TOTAL);
 type matrixSAD is array(0 to WIDTH-1, 0 to HEIGHT-1) of STD_LOGIC_VECTOR (7 downto 0);
 
 -- function somaSAD (in1, in2 : matrixSAD) return INTEGER;
@@ -41,7 +42,16 @@ package body teste is
 
 -- begin
 
-
+function log2_unsigned ( x : natural ) return natural is
+        variable temp : natural := x ;
+        variable n : natural := 0 ;
+    begin
+        while temp > 1 loop
+            temp := temp / 2 ;
+            n := n + 1 ;
+        end loop ;
+        return n ;
+    end function log2_unsigned ;
 
 -- end function;
 

@@ -23,7 +23,6 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.std_logic_arith.all;
 use IEEE.numeric_std.ALL;
 use work.teste.ALL;
-use IEEE.math_real.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -39,7 +38,7 @@ entity calcSAD is
 		matA : in matrixSAD;
 		matB : in matrixSAD;
 		en : in std_logic;
-		S   : out std_logic_vector(8+integer(log2(Real(TOTAL)))-1 downto 0	));
+		S   : out std_logic_vector(8+log2_unsigned(TOTAL)-1 downto 0	));
 end calcSAD;
 
 architecture Behavioral of calcSAD is
@@ -63,8 +62,8 @@ component genericSub is
 	);
 end component;
 
--- type signalArray8b is array(0 to log2(TOTAL)-1, 0 to TOTAL/2-1) of std_logic_vector(7+log2(TOTAL)-1 downto 0); --0 to log2(TOTAL)-1, 0 to TOTAL/2-1, 7+log2(TOTAL)-1
-type signalArray9b is array(0 to integer(log2(Real(TOTAL)))-1, 0 to TOTAL/2-1) of std_logic_vector(8+integer(log2(Real(TOTAL)))-1 downto 0); --0 to log2(TOTAL)-1, 0 to TOTAL/2-1, 8+log2(TOTAL)-1
+-- type signalArray8b is array(0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1) of std_logic_vector(7+log2_unsigned(TOTAL)-1 downto 0); --0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1, 7+log2_unsigned(TOTAL)-1
+type signalArray9b is array(0 to integer(log2_total)-1, 0 to TOTAL/2-1) of std_logic_vector(8+integer(log2_total)-1 downto 0); --0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1, 8+log2_unsigned(TOTAL)-1
 type subArray is array(0 to TOTAL-1) of std_logic_vector (7 downto 0);
 
 	signal subVec: subArray;
@@ -82,26 +81,26 @@ begin
 						
 						
 	
-		gen1: for i in 0 to integer(log2(Real(TOTAL)))-1 generate
+		gen1: for i in 0 to (log2_total)-1 generate
 			gen2: for j in 0 to (TOTAL/(2**(i+1)))-1 generate
 				gen3: if i = 0 generate
 					add0: genericAdder
-						generic map( widthX => 8 + i)	port map(subVec(j), subVec(TOTAL/2+j), c(i,j)(8+i downto 0));
+						generic map( widthX => 8 + i)	port map(subVec(j), subVec(HALF_TOTAL+j), c(i,j)(8+i downto 0));
 				end generate gen3;
 				
-				gen4: if i > 0 and i < integer(log2(Real(TOTAL)))-1 generate
+				gen4: if i > 0 and i < (log2_total)-1 generate
 					addx: genericAdder
-						generic map( widthX => 8 + i)	port map(c(i-1,j)(8+i-1 downto 0), c(i-1,j+(TOTAL/(2**(i+2))))(8+i-1 downto 0), c(i,j)(8+i downto 0));					
+						generic map( widthX => 8 + i)	port map(c(i-1,j)(8+i-1 downto 0), c(i-1,j+(HALF_TOTAL/(2**(i+1))))(8+i-1 downto 0), c(i,j)(8+i downto 0));					
 				end generate gen4;
 				
-				gen5: if i = integer(log2(Real(TOTAL)))-1 generate
+				gen5: if i = (log2_total)-1 generate
 					addF: genericAdder
 						generic map( widthX => 8 + i) port map(c(i-1,j)(8+i-1 downto 0), c(i-1, j+1)(8+i-1 downto 0), c(i,j)(8+i downto 0));
 				end generate gen5;
 			end generate gen2;
 		end generate gen1;
 
-		S <= (c(integer(log2(Real(TOTAL)))-1, 0));
+		S <= (c((log2_total)-1, 0));
 		
 
 end Behavioral;

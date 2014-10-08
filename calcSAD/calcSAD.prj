@@ -1,0 +1,4 @@
+vhdl work "teste.vhd"
+vhdl work "genericSub.vhd"
+vhdl work "genericAdder.vhd"
+vhdl work "calcSAD.vhd"
