@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/brunno/Documents/vhdl/testelog2/testelogtb_isim_beh.exe" -prj "/home/brunno/Documents/vhdl/testelog2/testelogtb_beh.prj" "work.testelogtb" 

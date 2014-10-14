@@ -1,0 +1,29 @@
+Command line:
+   calcSAD_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  47383
+
+Mon Oct 13 11:37:38 2014
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 158.228 Meg
+
+ Total Signals          : 99
+ Total Nets             : 781
+ Total Signal Drivers   : 47
+ Total Blocks           : 91
+ Total Primitive Blocks : 36
+ Total Processes        : 32
+ Total Traceable Variables  : 75
+ Total Scalar Nets and Variables : 1342
+Total Line Count : 32
+
+ Total Simulation Time: 0.01 sec
+
+ Current Memory Usage: 233.73 Meg
+
+Mon Oct 13 11:37:41 2014
+

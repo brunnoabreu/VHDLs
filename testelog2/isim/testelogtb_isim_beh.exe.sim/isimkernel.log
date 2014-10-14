@@ -1,0 +1,10 @@
+Command line:
+   testelogtb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  58714
+
+Mon Oct 13 11:23:47 2014
+
+
+ Elaboration Time: 0 sec

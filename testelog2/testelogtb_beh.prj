@@ -1,0 +1,3 @@
+vhdl work "testando.vhd"
+vhdl work "testelog.vhd"
+vhdl work "testelogtb.vhd"

@@ -4,15 +4,15 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: calcSAD.prj
@@ -137,16 +137,6 @@ Elaborating entity <genericAdder> (architecture <Behavioral>) with generics from
 Elaborating entity <genericAdder> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <genericAdder> (architecture <Behavioral>) with generics from library <work>.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 77. All outputs of instance <gen0[1].gen01[1].subX> of block <genericSub> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 77. All outputs of instance <gen0[1].gen01[2].subX> of block <genericSub> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 77. All outputs of instance <gen0[1].gen01[3].subX> of block <genericSub> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 77. All outputs of instance <gen0[3].gen01[1].subX> of block <genericSub> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 77. All outputs of instance <gen0[3].gen01[2].subX> of block <genericSub> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 77. All outputs of instance <gen0[3].gen01[3].subX> of block <genericSub> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 87. All outputs of instance <gen1[0].gen2[5].gen3.add0> of block <genericAdder> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 87. All outputs of instance <gen1[0].gen2[6].gen3.add0> of block <genericAdder> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 87. All outputs of instance <gen1[0].gen2[7].gen3.add0> of block <genericAdder> are unconnected in block <calcSAD>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 92. All outputs of instance <gen1[1].gen2[3].gen4.addx> of block <genericAdder> are unconnected in block <calcSAD>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -155,9 +145,6 @@ WARNING:Xst:2972 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 92. Al
 Synthesizing Unit <calcSAD>.
     Related source file is "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd".
 WARNING:Xst:647 - Input <en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 87: Output port <c> of the instance <gen1[0].gen2[6].gen3.add0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 87: Output port <c> of the instance <gen1[0].gen2[7].gen3.add0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" line 92: Output port <c> of the instance <gen1[1].gen2[3].gen4.addx> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <calcSAD> synthesized.
@@ -209,12 +196,12 @@ Unit <genericAdder_4> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 21
+# Adders/Subtractors                                   : 31
  10-bit adder                                          : 2
  11-bit adder                                          : 1
- 8-bit adder                                           : 5
- 8-bit subtractor                                      : 10
- 9-bit adder                                           : 3
+ 8-bit adder                                           : 8
+ 8-bit subtractor                                      : 16
+ 9-bit adder                                           : 4
 
 =========================================================================
 
@@ -227,12 +214,12 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 21
+# Adders/Subtractors                                   : 31
  10-bit adder                                          : 2
  11-bit adder                                          : 1
- 8-bit adder                                           : 5
- 8-bit subtractor                                      : 10
- 9-bit adder                                           : 3
+ 8-bit adder                                           : 8
+ 8-bit subtractor                                      : 16
+ 9-bit adder                                           : 4
 
 =========================================================================
 
@@ -244,7 +231,7 @@ Optimizing unit <calcSAD> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block calcSAD, actual ratio is 8.
+Found area constraint ratio of 100 (+ 5) on block calcSAD, actual ratio is 12.
 
 Final Macro Processing ...
 
@@ -273,16 +260,16 @@ Top Level Output File Name         : calcSAD.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 398
+# BELS                             : 584
 #      GND                         : 1
-#      LUT2                        : 60
-#      LUT3                        : 56
-#      LUT4                        : 56
-#      MUXCY                       : 106
+#      LUT2                        : 92
+#      LUT3                        : 80
+#      LUT4                        : 80
+#      MUXCY                       : 156
 #      VCC                         : 1
-#      XORCY                       : 118
-# IO Buffers                       : 172
-#      IBUF                        : 160
+#      XORCY                       : 174
+# IO Buffers                       : 268
+#      IBUF                        : 256
 #      OBUF                        : 12
 
 Device utilization summary:
@@ -292,19 +279,19 @@ Selected Device : 6slx4tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                  172  out of   2400     7%  
-    Number used as Logic:               172  out of   2400     7%  
+ Number of Slice LUTs:                  252  out of   2400    10%  
+    Number used as Logic:               252  out of   2400    10%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    172
-   Number with an unused Flip Flop:     172  out of    172   100%  
-   Number with an unused LUT:             0  out of    172     0%  
-   Number of fully used LUT-FF pairs:     0  out of    172     0%  
+ Number of LUT Flip Flop pairs used:    252
+   Number with an unused Flip Flop:     252  out of    252   100%  
+   Number with an unused LUT:             0  out of    252     0%  
+   Number of fully used LUT-FF pairs:     0  out of    252     0%  
    Number of unique control sets:         0
 
 IO Utilization: 
  Number of IOs:                         269
- Number of bonded IOBs:                 172  out of    102   168% (*) 
+ Number of bonded IOBs:                 268  out of    102   262% (*) 
 
 Specific Feature Utilization:
 
@@ -341,7 +328,7 @@ Speed Grade: -3
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 12.246ns
+   Maximum combinational path delay: 12.180ns
 
 Timing Details:
 ---------------
@@ -351,28 +338,28 @@ All values displayed in nanoseconds (ns)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 775587 / 11
 -------------------------------------------------------------------------
-Delay:               12.246ns (Levels of Logic = 21)
-  Source:            matA<0><1><0> (PAD)
+Delay:               12.180ns (Levels of Logic = 21)
+  Source:            matA<0><0><0> (PAD)
   Destination:       S<10> (PAD)
 
-  Data Path: matA<0><1><0> to S<10>
+  Data Path: matA<0><0><0> to S<10>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.684  matA_0__1__0_IBUF (matA_0__1__0_IBUF)
-     LUT2:I0->O            1   0.203   0.000  gen0[0].gen01[1].subX/Msub_c_lut<0> (gen0[0].gen01[1].subX/Msub_c_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  gen0[0].gen01[1].subX/Msub_c_cy<0> (gen0[0].gen01[1].subX/Msub_c_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  gen0[0].gen01[1].subX/Msub_c_cy<1> (gen0[0].gen01[1].subX/Msub_c_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  gen0[0].gen01[1].subX/Msub_c_cy<2> (gen0[0].gen01[1].subX/Msub_c_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  gen0[0].gen01[1].subX/Msub_c_cy<3> (gen0[0].gen01[1].subX/Msub_c_cy<3>)
-     XORCY:CI->O           2   0.180   0.617  gen0[0].gen01[1].subX/Msub_c_xor<4> (subVec<1><4>)
-     LUT3:I2->O            1   0.205   0.580  gen1[0].gen2[1].gen3.add0/Madd_c<7:0>4 (gen1[0].gen2[1].gen3.add0/Madd_c<7:0>4)
-     LUT4:I3->O            1   0.205   0.000  gen1[0].gen2[1].gen3.add0/Madd_c<7:0>_lut<0>5 (gen1[0].gen2[1].gen3.add0/Madd_c<7:0>_lut<0>5)
-     MUXCY:S->O            1   0.172   0.000  gen1[0].gen2[1].gen3.add0/Madd_c<7:0>_cy<0>_4 (gen1[0].gen2[1].gen3.add0/Madd_c<7:0>_cy<0>5)
-     XORCY:CI->O           1   0.180   0.684  gen1[0].gen2[1].gen3.add0/Madd_c<7:0>_xor<0>_5 (c<0><1><6>)
-     LUT2:I0->O            1   0.203   0.000  gen1[1].gen2[1].gen4.addx/Madd_c<8:0>_lut<6> (gen1[1].gen2[1].gen4.addx/Madd_c<8:0>_lut<6>)
-     MUXCY:S->O            1   0.172   0.000  gen1[1].gen2[1].gen4.addx/Madd_c<8:0>_cy<6> (gen1[1].gen2[1].gen4.addx/Madd_c<8:0>_cy<6>)
-     XORCY:CI->O           4   0.180   0.684  gen1[1].gen2[1].gen4.addx/Madd_c<8:0>_xor<7> (c<1><1><7>)
+     IBUF:I->O             1   1.222   0.684  matA_0__0__0_IBUF (matA_0__0__0_IBUF)
+     LUT2:I0->O            1   0.203   0.000  gen0[0].gen01[0].subX/Msub_c_lut<0> (gen0[0].gen01[0].subX/Msub_c_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  gen0[0].gen01[0].subX/Msub_c_cy<0> (gen0[0].gen01[0].subX/Msub_c_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  gen0[0].gen01[0].subX/Msub_c_cy<1> (gen0[0].gen01[0].subX/Msub_c_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  gen0[0].gen01[0].subX/Msub_c_cy<2> (gen0[0].gen01[0].subX/Msub_c_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  gen0[0].gen01[0].subX/Msub_c_cy<3> (gen0[0].gen01[0].subX/Msub_c_cy<3>)
+     XORCY:CI->O           2   0.180   0.617  gen0[0].gen01[0].subX/Msub_c_xor<4> (subVec<0><4>)
+     LUT3:I2->O            1   0.205   0.580  gen1[0].gen2[0].gen3.add0/Madd_c<7:0>4 (gen1[0].gen2[0].gen3.add0/Madd_c<7:0>4)
+     LUT4:I3->O            1   0.205   0.000  gen1[0].gen2[0].gen3.add0/Madd_c<7:0>_lut<0>5 (gen1[0].gen2[0].gen3.add0/Madd_c<7:0>_lut<0>5)
+     MUXCY:S->O            1   0.172   0.000  gen1[0].gen2[0].gen3.add0/Madd_c<7:0>_cy<0>_4 (gen1[0].gen2[0].gen3.add0/Madd_c<7:0>_cy<0>5)
+     XORCY:CI->O           1   0.180   0.684  gen1[0].gen2[0].gen3.add0/Madd_c<7:0>_xor<0>_5 (c<0><0><6>)
+     LUT2:I0->O            1   0.203   0.000  gen1[1].gen2[0].gen4.addx/Madd_c<8:0>_lut<6> (gen1[1].gen2[0].gen4.addx/Madd_c<8:0>_lut<6>)
+     MUXCY:S->O            1   0.172   0.000  gen1[1].gen2[0].gen4.addx/Madd_c<8:0>_cy<6> (gen1[1].gen2[0].gen4.addx/Madd_c<8:0>_cy<6>)
+     XORCY:CI->O           2   0.180   0.617  gen1[1].gen2[0].gen4.addx/Madd_c<8:0>_xor<7> (c<1><0><7>)
      LUT3:I2->O            1   0.205   0.684  gen1[2].gen2[0].gen4.addx/Madd_c<9:0>7 (gen1[2].gen2[0].gen4.addx/Madd_c<9:0>7)
      LUT2:I0->O            1   0.203   0.000  gen1[2].gen2[0].gen4.addx/Madd_c<9:0>_lut<0>8 (gen1[2].gen2[0].gen4.addx/Madd_c<9:0>_lut<0>8)
      MUXCY:S->O            0   0.172   0.000  gen1[2].gen2[0].gen4.addx/Madd_c<9:0>_cy<0>_7 (gen1[2].gen2[0].gen4.addx/Madd_c<9:0>_cy<0>8)
@@ -381,8 +368,8 @@ Delay:               12.246ns (Levels of Logic = 21)
      MUXCY:S->O            1   0.366   0.579  gen1[3].gen2[0].gen5.addF/Madd_c<10:0>_cy<9> (gen1[3].gen2[0].gen5.addF/Madd_c<10:0>_cy<9>)
      OBUF:I->O                 2.571          S_10_OBUF (S<10>)
     ----------------------------------------
-    Total                     12.246ns (7.051ns logic, 5.195ns route)
-                                       (57.6% logic, 42.4% route)
+    Total                     12.180ns (7.051ns logic, 5.129ns route)
+                                       (57.9% logic, 42.1% route)
 
 =========================================================================
 
@@ -392,15 +379,15 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.94 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 5.01 secs
  
 --> 
 
 
-Total memory usage is 273712 kilobytes
+Total memory usage is 273728 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   16 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 

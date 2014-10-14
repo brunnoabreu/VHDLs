@@ -1,0 +1,12 @@
+V3 6
+FL /home/brunno/Documents/vhdl/testelog2/testando.vhd 2014/10/13.11:23:15 O.61xd
+PH work/testando 1413210217 FL /home/brunno/Documents/vhdl/testelog2/testando.vhd \
+      PB ieee/std_logic_1164 1308643377
+PB work/testando 1413210218 \
+      FL /home/brunno/Documents/vhdl/testelog2/testando.vhd PH work/testando 1413210217
+FL /home/brunno/Documents/vhdl/testelog2/testelog.vhd 2014/10/13.11:23:35 O.61xd
+EN work/testelog 1413210219 FL /home/brunno/Documents/vhdl/testelog2/testelog.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/STD_LOGIC_UNSIGNED 1308643379 \
+      PB ieee/NUMERIC_STD 1308643378 PB work/testando 1413210218
+AR work/testelog/Behavioral 1413210220 \
+      FL /home/brunno/Documents/vhdl/testelog2/testelog.vhd EN work/testelog 1413210219

@@ -1,0 +1,27 @@
+Running: /opt/Xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/brunno/Documents/vhdl/testelog2/testelogtb_isim_beh.exe -prj /home/brunno/Documents/vhdl/testelog2/testelogtb_beh.prj work.testelogtb 
+ISim O.61xd (signature 0xb4d1ced7)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/brunno/Documents/vhdl/testelog2/testando.vhd" into library work
+Parsing VHDL file "/home/brunno/Documents/vhdl/testelog2/testelog.vhd" into library work
+Parsing VHDL file "/home/brunno/Documents/vhdl/testelog2/testelogtb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 74460 KB
+Fuse CPU Usage: 100 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling package testando
+Compiling architecture behavioral of entity testelog [testelog_default]
+Compiling architecture behavior of entity testelogtb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 9 VHDL Units
+Built simulation executable /home/brunno/Documents/vhdl/testelog2/testelogtb_isim_beh.exe
+Fuse Memory Usage: 652256 KB
+Fuse CPU Usage: 270 ms
+GCC CPU Usage: 290 ms

@@ -1,0 +1,32 @@
+Running: /opt/Xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/brunno/Documents/vhdl/calcSAD/calcSAD_isim_beh.exe -prj /home/brunno/Documents/vhdl/calcSAD/calcSAD_beh.prj work.calcSAD 
+ISim O.61xd (signature 0xb4d1ced7)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/brunno/Documents/vhdl/calcSAD/teste.vhd" into library work
+Parsing VHDL file "/home/brunno/Documents/vhdl/calcSAD/genericSub.vhd" into library work
+Parsing VHDL file "/home/brunno/Documents/vhdl/calcSAD/genericAdder.vhd" into library work
+Parsing VHDL file "/home/brunno/Documents/vhdl/calcSAD/calcSAD.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 74480 KB
+Fuse CPU Usage: 120 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling package teste
+Compiling architecture behavioral of entity genericSub [genericsub_default]
+Compiling architecture behavioral of entity genericAdder [\genericAdder(8)\]
+Compiling architecture behavioral of entity genericAdder [\genericAdder(9)\]
+Compiling architecture behavioral of entity genericAdder [\genericAdder(10)\]
+Compiling architecture behavioral of entity genericAdder [\genericAdder(11)\]
+Compiling architecture behavioral of entity calcsad
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 17 VHDL Units
+Built simulation executable /home/brunno/Documents/vhdl/calcSAD/calcSAD_isim_beh.exe
+Fuse Memory Usage: 652488 KB
+Fuse CPU Usage: 300 ms
+GCC CPU Usage: 3410 ms

@@ -37,8 +37,8 @@ entity calcSAD is
 	Port(
 		matA : in matrixSAD;
 		matB : in matrixSAD;
-		en : in std_logic;
-		S   : out std_logic_vector(8+log2_unsigned(TOTAL)-1 downto 0	));
+		en   : in std_logic;
+		S    : out std_logic_vector(8 + log2_total - 1 downto 0	));
 end calcSAD;
 
 architecture Behavioral of calcSAD is
@@ -63,7 +63,7 @@ component genericSub is
 end component;
 
 -- type signalArray8b is array(0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1) of std_logic_vector(7+log2_unsigned(TOTAL)-1 downto 0); --0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1, 7+log2_unsigned(TOTAL)-1
-type signalArray9b is array(0 to integer(log2_total)-1, 0 to TOTAL/2-1) of std_logic_vector(8+integer(log2_total)-1 downto 0); --0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1, 8+log2_unsigned(TOTAL)-1
+type signalArray9b is array(0 to log2_total-1, 0 to TOTAL/2-1) of std_logic_vector(8+log2_total-1 downto 0); --0 to log2_unsigned(TOTAL)-1, 0 to TOTAL/2-1, 8+log2_unsigned(TOTAL)-1
 type subArray is array(0 to TOTAL-1) of std_logic_vector (7 downto 0);
 
 	signal subVec: subArray;
@@ -90,7 +90,7 @@ begin
 				
 				gen4: if i > 0 and i < (log2_total)-1 generate
 					addx: genericAdder
-						generic map( widthX => 8 + i)	port map(c(i-1,j)(8+i-1 downto 0), c(i-1,j+(HALF_TOTAL/(2**(i+1))))(8+i-1 downto 0), c(i,j)(8+i downto 0));					
+						generic map( widthX => 8 + i)	port map(c(i-1,j)(8+i-1 downto 0), c(i-1,j+(HALF_TOTAL/(2**i)))(8+i-1 downto 0), c(i,j)(8+i downto 0));					
 				end generate gen4;
 				
 				gen5: if i = (log2_total)-1 generate

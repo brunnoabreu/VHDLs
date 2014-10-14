@@ -1,0 +1,6 @@
+vhdl isim_temp "teste.vhd"
+vhdl isim_temp "genericSub.vhd"
+vhdl isim_temp "genericAdder.vhd"
+vhdl isim_temp "teste2.vhd"
+vhdl isim_temp "calcSAD.vhd"
+vhdl isim_temp "calcSAD_TB.vhd"

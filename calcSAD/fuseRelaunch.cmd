@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/brunno/Documents/vhdl/calcSAD/calcSAD_isim_beh.exe" -prj "/home/brunno/Documents/vhdl/calcSAD/calcSAD_beh.prj" "work.calcSAD" 
